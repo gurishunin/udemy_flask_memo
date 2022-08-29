@@ -9,11 +9,15 @@
             <tr>
                 <th>タイトル</th>
                 <th>メモ</th>
+                <th></th>
             </tr>
             {% for memo in memo_list %}
                 <tr>
                     <td>{{memo.title}}</td>   
-                    <td>{{memo.body}}</td>                 
+                    <td>{{memo.body}}</td>
+                    <td>
+                        <a href="/{{memo.id}}/edit" role="button">編集</a>
+                    </td>                 
                 </tr>
             {% endfor %}
         </table>
