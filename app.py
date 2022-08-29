@@ -1,14 +1,11 @@
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
-
-@app.route("/<name>")
-def hello(name):
-    return f"<p>Hello, { name }!</p>"
+def hello_guri():
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run()
