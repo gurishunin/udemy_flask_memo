@@ -3,21 +3,15 @@ from flask import render_template
 
 app = Flask(__name__)
 
-list =[
-    'test1',
-    'test2',
-    'test3',
-    'test4',
-    'test5',
-    'test6',
-    'test7',
-    'test8',
-    'test9'
+memo_list = [
+    {'title':"test01",'body':"ぐり主任です。"},
+    {'title':"test02",'body':"ぐらです。"},
+    #{'title':"test03",'body':"test03"}
 ]
 
-@app.route("/<name>")
-def hello(name):
-    return render_template('index.html',name=name,list=list)
+@app.route("/")
+def top():
+    return render_template('index.html',memo_list=memo_list)
 
 if __name__ == "__main__":
     app.run()
