@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>削除</h1>
+<p>以下のメモを削除しますか？</p>
+<form method="POST">
+    <table border="1">
+        <tr>
+            <th>タイトル</th>
+            <th>メモ</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="title" value="{{post.title}}" disabled>
+            </td>   
+            <td>
+                <input type="text" name="body" value="{{post.body}}" disabled>
+            </td>                 
+        </tr>
+    </table>
+    <input type="submit" value="削除">
+</form>
+<a href="/" role="button">一覧に戻る</a>
+{% endblock %}
